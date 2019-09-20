@@ -6,23 +6,30 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transaction;
 
 import com.cg.demojpa.dto.Employee;
+import com.cg.demojpa.dto.Project;
 
 public class EmployeeDaoImpl implements EmployeeDao {
+	@PersistenceContext
 	
 	EntityManagerFactory entityFactory = Persistence.createEntityManagerFactory("demojpa");
 
 	public Employee save(Employee emp) {
 		
+		
 		EntityManager em = entityFactory.createEntityManager();
 		EntityTransaction tran = em.getTransaction();
 		tran.begin();
+		//em.persist(emp.getProj());
 		em.persist(emp);
 		
+		
 		tran.commit();
+		
 		
 		return null;
 	}

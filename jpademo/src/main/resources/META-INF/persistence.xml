@@ -5,6 +5,8 @@
 
         <!-- Entity classes -->
         <class>com.cg.demojpa.dto.Employee</class>
+        <class>com.cg.demojpa.dto.Project</class>
+        <class>com.cg.demojpa.dto.Department</class>
         
        
         
@@ -12,12 +14,12 @@
             <!-- The JDBC driver of your database -->
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
             <!-- The JDBC URL to the database instance -->
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/test" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/jpa" />
             <!-- The database username -->
             <property name="javax.persistence.jdbc.user" value="root" />
             <!-- The database password -->
             <property name="javax.persistence.jdbc.password" value="root" />
-            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
            <property name = "hibernate.show_sql" value = "true" />
         </properties>
     </persistence-unit>
